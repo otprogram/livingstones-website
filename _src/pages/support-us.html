@@ -43,27 +43,45 @@
   </div>
   <div class="donate__box">
     <h2>Donate Now</h2>
-    <p>Help us make a difference. Please transfer your donation to our account:</p>
+    <p>Help us make a difference.</p>
+    <div class="amounts" role="group" aria-label="Donation amount in CHF">
+      <button type="button" data-amount="36">CHF 36</button>
+      <button type="button" data-amount="100" class="on">CHF 100</button>
+      <button type="button" data-amount="180">CHF 180</button>
+      <button type="button" data-amount="500">CHF 500</button>
+    </div>
+    <label for="pp-amount">Or enter an amount (CHF)</label>
+    <input id="pp-amount" inputmode="decimal" value="100">
+    <div id="paypal-buttons" class="paypal"></div>
+    <p id="pp-msg" class="pp-msg" role="status"></p>
+    <p class="small">Pay with PayPal or with a debit/credit card. 100% of your donation funds LivingStones projects.</p>
+
+    <h3 style="margin-top:28px">Or by bank transfer</h3>
     <dl class="bank">
       <dt>Beneficiary</dt><dd>LivingStones Association</dd>
       <dt>IBAN</dt><dd>CH21 0900 0000 6101 8370 0 <button class="copy" type="button" data-copy="CH21 0900 0000 6101 8370 0">Copy</button></dd>
       <dt>Bank</dt><dd>PostFinance AG</dd>
       <dt>BIC / SWIFT</dt><dd>POFICHBEXXX</dd>
     </dl>
-    <p style="font-size:.9rem">So we can thank you personally, let us know about your donation:</p>
-    <form action="https://formsubmit.co/info@livingstones-association.org" method="POST">
-      <input type="hidden" name="_subject" value="Website: donation notice">
-      <input type="hidden" name="_next" value="">
-      <input type="hidden" name="_template" value="table">
-      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
-      <div class="form-row">
-        <div><label for="d-first">First name</label><input id="d-first" name="first_name"></div>
-        <div><label for="d-last">Last name</label><input id="d-last" name="last_name"></div>
-      </div>
-      <label for="d-email">Email *</label><input id="d-email" type="email" name="email" required>
-      <label for="d-name">Donate in the name of</label><input id="d-name" name="in_the_name_of">
-      <label for="d-amount">Amount (CHF)</label><input id="d-amount" name="amount_chf" inputmode="decimal">
-      <button class="btn btn--outline btn--block" type="submit">Send</button>
-    </form>
+    <details class="notify">
+      <summary>Donated by bank transfer? Let us know so we can thank you</summary>
+      <form action="https://formsubmit.co/info@livingstones-association.org" method="POST">
+        <input type="hidden" name="_subject" value="Website: donation notice">
+        <input type="hidden" name="_next" value="">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+        <div class="form-row">
+          <div><label for="d-first">First name</label><input id="d-first" name="first_name"></div>
+          <div><label for="d-last">Last name</label><input id="d-last" name="last_name"></div>
+        </div>
+        <label for="d-email">Email *</label><input id="d-email" type="email" name="email" required>
+        <label for="d-name">Donate in the name of</label><input id="d-name" name="in_the_name_of">
+        <label for="d-amount">Amount (CHF)</label><input id="d-amount" name="amount_chf" inputmode="decimal">
+        <button class="btn btn--outline btn--block" type="submit">Send</button>
+      </form>
+    </details>
   </div>
 </section>
+<!-- PayPal: LivingStones live account (same as the Yedinitz cemetery site). The client ID is public. -->
+<script src="https://www.paypal.com/sdk/js?client-id=ASS3f0KyqcdmnuzH0a4H41kzUImjEsqXLKyB1XNWp5fM98XQUhCr7JMlWv9XBsFX3sfHwokLo7AMZybs&currency=CHF&intent=capture&components=buttons"></script>
+<script src="{{root}}assets/js/donate.js"></script>

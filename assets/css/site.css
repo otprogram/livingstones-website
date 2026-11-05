@@ -226,3 +226,18 @@ form button { margin-top: 18px; }
 .site-footer__bar { background: var(--ink); color: #bbb; text-align: center; font-size: .82rem; padding: 14px 20px; }
 .site-footer__bar a { color: #ddd; }
 @media (max-width: 760px) { .site-footer__inner { grid-template-columns: 1fr; gap: 28px; } }
+
+/* donation: amount picker + PayPal */
+.amounts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 14px 0 4px; }
+.amounts button { background: #1d1d1d; color: #ddd; border: 1px solid #444; padding: 10px 4px; font: inherit; font-size: .9rem; cursor: pointer; }
+.amounts button.on, .amounts button:hover { border-color: #fff; color: #fff; background: #2a2a2a; }
+.donate__box input { background: #fff; color: var(--text); }
+.paypal { margin-top: 18px; min-height: 50px; background: #fff; padding: 12px 12px 4px; }
+.pp-msg { min-height: 1.2em; margin: 10px 0 0; font-weight: 600; color: #fff; }
+.small { font-size: .82rem; color: #aaa; }
+.notify summary { cursor: pointer; font-size: .9rem; color: #ddd; }
+.notify[open] summary { margin-bottom: 8px; }
+@media (max-width: 420px) { .amounts { grid-template-columns: repeat(2, 1fr); } }
+.donate__box h3 { color: #fff; }
+.donate__box > label { display: block; font-size: .88rem; font-weight: 600; margin: 14px 0 4px; }
+.donate__box > input { width: 100%; font: inherit; font-size: 1rem; padding: 10px 12px; border: 1px solid #bbb; border-radius: 0; }
